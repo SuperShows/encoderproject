@@ -1,50 +1,50 @@
 var letters = {
+  64: "z",
   65: "a",
   66: "b",
-  68: "c",
-  69: "d",
-  70: "e",
-  71: "f",
-  72: "g",
-  73: "h",
-  74: "i",
-  75: "j",
-  76: "k",
-  77: "l",
-  78: "m",
-  79: "n",
-  80: "o",
-  81: "p",
-  82: "q",
-  83: "r",
-  84: "s",
-  85: "t",
-  86: "u",
-  87: "v",
-  88: "w",
-  89: "x",
-  90: "y",
-  91: "z"
+  67: "c",
+  68: "d",
+  69: "e",
+  70: "f",
+  71: "g",
+  72: "h",
+  73: "i",
+  74: "j",
+  75: "k",
+  76: "l",
+  77: "m",
+  78: "n",
+  79: "o",
+  80: "p",
+  81: "q",
+  82: "r",
+  83: "s",
+  84: "t",
+  85: "u",
+  86: "v",
+  87: "w",
+  88: "x",
+  89: "y",
+  90: "z",
+  32: " "
 }
 
 $("#inputText").keyup(function(e) {
-  var inputText = document.getElementById("inputText").value;
-  document.getElementById("textArea").innerHTML = inputText;
+
+  if ($("input:checked").val() == "echo") {
+    document.getElementById("textArea").innerHTML += letters[e.keyCode];
+  }
+
+  else if ($("input:checked").val() == "Caesar Cipher") {
+    document.getElementById("textArea").innerHTML += letters[e.keyCode - 1];
+  }
+
+if ($("input:checked").val() == "Heiroglyphics") {
+    document.getElementById("textArea").innerHTML += letters[e.keycode - 1];
+  }
 });
 
-if ($("input:checked").val() == "echo") {
-  document.getElementyId("textArea").innerHTML += letters[e.keycode];
-}
-
-} else if ($("input:checked").val() == "Caesar Cipher") {
-  document.getElementyId("textArea").innerHTML += letters.(e.keycode - 1);
-}
-
-} else if ($("input:checked").val() == "Heiroglyphics") {
-  document.getElementById("textArea").inneHTML = inputText;
-}
-
-$("input[type='radio']").click(function() {
+$("input[type='radio']").click(function(e) {
   $("input:checked").prop('checked', false );
   $(this).prop('checked', true )
 });
