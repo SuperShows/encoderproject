@@ -39,8 +39,10 @@ $("#inputText").keyup(function(e) {
     document.getElementById("textArea").innerHTML += letters[e.keyCode - 1];
   }
 
-if ($("input:checked").val() == "Heiroglyphics") {
-    document.getElementById("textArea").innerHTML += letters[e.keycode - 1];
+else if ($("input:checked").val() == "Heiroglyphics") {
+
+    var HeiroglyphicsString = <"img src = 'images/heiroglyphics/" + letters[e.keyCode] + ".gif'>"
+    document.getElementById("textArea").innerHTML += HeiroglyphicsString;
   }
 });
 
